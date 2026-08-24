@@ -40,50 +40,50 @@ export default function Home() {
 
   return (
     <div>
-      {/* HERO */}
-      <section
-        className={cn(
-          "min-h-[90vh] flex flex-col justify-center px-6 md:px-10 py-24 border-b-2 transition-colors duration-500",
-          isAm ? "border-noir-encre" : "border-blanc-craie"
-        )}
-      >
-        <motion.span
-          key={`label-${mode}`}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-xs font-bold uppercase tracking-label text-chene mb-6"
+      {/* HERO — bloc couleur + image, façon affiche éditoriale */}
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        <div
+          className={cn(
+            "min-h-[60vh] md:min-h-[70vh] flex flex-col justify-end p-8 md:p-14 transition-colors duration-500",
+            isAm ? "bg-chene text-noir-encre" : "bg-noyer text-blanc-craie"
+          )}
         >
-          {isAm ? "Concept AM — 10h / 15h" : "Concept PM — 18h / 01h"}
-        </motion.span>
+          <motion.span
+            key={`label-${mode}`}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-xs font-bold uppercase tracking-label mb-4"
+          >
+            {isAm ? "Concept AM — 10h / 15h" : "Concept PM — 18h / 01h"}
+          </motion.span>
 
-        <motion.h1
-          key={`title-${mode}`}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-display uppercase leading-[0.85] text-[15vw] md:text-[9vw]"
-        >
-          {isAm ? "Lieu Lent" : "Lieu Rapide"}
-        </motion.h1>
+          <motion.h1
+            key={`title-${mode}`}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-display uppercase text-titre md:text-display"
+          >
+            {isAm ? (
+              <>
+                Brunch
+                <br />
+                Le Matin
+              </>
+            ) : (
+              <>
+                Fast Food
+                <br />
+                Le Soir
+              </>
+            )}
+          </motion.h1>
 
-        <motion.p
-          key={`desc-${mode}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-8 max-w-xl text-base md:text-lg font-sans"
-        >
-          {isAm
-            ? "Lumière naturelle, bois brut, vaisselle blanche. Un lieu lent, pour prendre son temps entre 10h et 15h."
-            : "Nuit, néon chaud, comptoir sombre. Un lieu rapide, pour les affamés du soir, de 18h à 01h."}
-        </motion.p>
-
-        <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/carte"
             className={cn(
-              "inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
+              "mt-8 inline-flex items-center gap-2 self-start px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
               isAm
                 ? "bg-noir-encre text-blanc-craie border-noir-encre hover:bg-transparent hover:text-noir-encre"
                 : "bg-blanc-craie text-noir-encre border-blanc-craie hover:bg-transparent hover:text-blanc-craie"
@@ -92,16 +92,30 @@ export default function Home() {
             Voir la carte
             <ArrowRight strokeWidth={1.5} className="size-4" />
           </Link>
-          <Link
-            href="/qui-sommes-nous"
-            className={cn(
-              "inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
-              isAm ? "border-noir-encre" : "border-blanc-craie"
-            )}
-          >
-            Qui sommes-nous
-          </Link>
         </div>
+
+        <div className="min-h-[40vh] md:min-h-[70vh] flex items-center justify-center bg-current/5">
+          <span className="text-[10px] uppercase tracking-label opacity-30">Photo</span>
+        </div>
+      </section>
+
+      <div className="checkerboard h-3 w-full" />
+
+      {/* ACCROCHE */}
+      <section className="px-6 md:px-10 py-16 md:py-20 border-b-2 border-current/20">
+        <p className="font-display uppercase text-titre md:text-display leading-[0.95] max-w-4xl">
+          O&apos;Monro est le lieu qui vit deux vies : lumière et lenteur le matin, néon et
+          vitesse le soir.
+        </p>
+        <Link
+          href="/qui-sommes-nous"
+          className={cn(
+            "mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
+            isAm ? "border-noir-encre" : "border-blanc-craie"
+          )}
+        >
+          Qui sommes-nous
+        </Link>
       </section>
 
       <SectionMarquee />

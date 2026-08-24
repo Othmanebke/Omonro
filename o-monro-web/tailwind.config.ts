@@ -18,7 +18,6 @@ export default {
       fontFamily: {
         display: ["var(--font-archivo-black)", "sans-serif"],
         sans: ["var(--font-archivo)", "sans-serif"],
-        logo: ["var(--font-logo)", "cursive"],
       },
       fontSize: {
         display: ["4rem", { lineHeight: "0.98", letterSpacing: "-0.01em" }],

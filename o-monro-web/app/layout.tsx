@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Archivo, Archivo_Black, Permanent_Marker } from "next/font/google";
+import { Archivo, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ModePicker from "@/components/ModePicker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -19,13 +20,6 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const logoFont = Permanent_Marker({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-logo",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "O'Monro — Brunch le matin, Fast Food le soir",
   description:
@@ -38,12 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       data-mode="am"
       suppressHydrationWarning
-      className={`${archivoBlack.variable} ${archivo.variable} ${logoFont.variable} h-full`}
+      className={`${archivoBlack.variable} ${archivo.variable} h-full`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
         <ThemeProvider>
+          <ModePicker />
           <Navbar />
-          <div className="checkerboard h-3 w-full mt-20" />
+          <div className="checkerboard h-3 w-full" />
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

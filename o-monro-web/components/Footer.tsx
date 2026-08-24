@@ -28,7 +28,7 @@ export default function Footer() {
 
       <div className="px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10 border-b-2 border-noir-encre/20">
         <div className="md:col-span-7">
-          <Logo className="text-[16vw] md:text-[9vw] leading-[0.85]" />
+          <Logo className="h-32 sm:h-40 md:h-56 w-full max-w-md" />
         </div>
 
         <div className="md:col-span-5 grid grid-cols-2 gap-8">
