@@ -15,7 +15,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { mode, openPicker } = useTheme();
+  const { mode, toggleMode } = useTheme();
   const [open, setOpen] = useState(false);
   const isAm = mode === "am";
 
@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="hidden md:flex flex-col items-end gap-4 flex-1">
           <button
             type="button"
-            onClick={openPicker}
+            onClick={toggleMode}
             className="text-xs font-bold uppercase tracking-label opacity-70 hover:opacity-100 transition-opacity"
           >
             Brunch le matin · Fast food le soir
@@ -93,7 +93,7 @@ export default function Navbar() {
             type="button"
             onClick={() => {
               setOpen(false);
-              openPicker();
+              toggleMode();
             }}
             className="mt-2 self-start text-xs font-bold uppercase tracking-label opacity-70"
           >

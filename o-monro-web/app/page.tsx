@@ -37,14 +37,16 @@ const signatures = [
 export default function Home() {
   const { mode } = useTheme();
   const isAm = mode === "am";
+  const line = isAm ? "border-noir-encre" : "border-blanc-craie";
 
   return (
     <div>
-      {/* HERO — bloc couleur + image, façon affiche éditoriale */}
-      <section className="grid grid-cols-1 md:grid-cols-2">
+      {/* HERO — split dur, typographie viewport */}
+      <section className={cn("grid grid-cols-1 md:grid-cols-2 border-b-2", line)}>
         <div
           className={cn(
-            "min-h-[60vh] md:min-h-[70vh] flex flex-col justify-end p-8 md:p-14 transition-colors duration-500",
+            "min-h-[65vh] md:min-h-[85vh] flex flex-col justify-end p-6 md:p-10 border-b-2 md:border-b-0 md:border-r-2 transition-colors duration-500",
+            line,
             isAm ? "bg-chene text-noir-encre" : "bg-noyer text-blanc-craie"
           )}
         >
@@ -63,19 +65,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-display uppercase text-titre md:text-display"
+            className="font-display uppercase leading-[0.8] text-[16vw] md:text-[9.5vw]"
           >
             {isAm ? (
               <>
                 Brunch
                 <br />
-                Le Matin
+                Matin
               </>
             ) : (
               <>
-                Fast Food
+                Fast
                 <br />
-                Le Soir
+                Food
               </>
             )}
           </motion.h1>
@@ -94,24 +96,23 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="min-h-[40vh] md:min-h-[70vh] flex items-center justify-center bg-current/5">
+        <div className="min-h-[35vh] md:min-h-[85vh] flex items-center justify-center bg-current/5">
           <span className="text-[10px] uppercase tracking-label opacity-30">Photo</span>
         </div>
       </section>
 
-      <div className="checkerboard h-4 w-full" />
-
       {/* ACCROCHE */}
-      <section className="px-6 md:px-10 py-16 md:py-20 border-b-2 border-current/20">
-        <p className="font-display uppercase text-titre md:text-display leading-[0.95] max-w-4xl">
-          O&apos;Monro est le lieu qui vit deux vies : lumière et lenteur le matin, néon et
-          vitesse le soir.
+      <section className={cn("px-4 md:px-8 py-10 md:py-14 border-b-2", line)}>
+        <p className="font-display uppercase text-[11vw] md:text-[6.2vw] leading-[0.8]">
+          Deux Vies,
+          <br />
+          Un Lieu.
         </p>
         <Link
           href="/qui-sommes-nous"
           className={cn(
             "mt-8 inline-flex items-center gap-2 px-7 py-4 font-bold text-xs uppercase tracking-label border-2 transition-colors",
-            isAm ? "border-noir-encre" : "border-blanc-craie"
+            line
           )}
         >
           Qui sommes-nous
@@ -121,38 +122,36 @@ export default function Home() {
       <SectionMarquee />
 
       {/* LE CONCEPT */}
-      <section className="border-b-2 border-current/20">
-        <div className="px-6 md:px-10 py-16">
-          <h2 className="font-display uppercase text-titre md:text-display mb-4">Le Concept</h2>
-          <p className="max-w-2xl font-sans text-corps opacity-80">
-            Un seul lieu, deux vies. À 15h, la salle bascule : la lumière change, le service
-            s&apos;accélère, la carte se retourne.
-          </p>
+      <section className={cn("border-b-2", line)}>
+        <div className={cn("px-4 md:px-8 py-10 md:py-14 border-b-2", line)}>
+          <h2 className="font-display uppercase text-[11vw] md:text-[6.2vw] leading-[0.8]">
+            Le Concept
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t-2 border-current/20">
-          <div className="bg-blanc-craie text-noir-encre p-10 md:p-16 border-b-2 md:border-b-0 md:border-r-2 border-current/20">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className={cn("bg-blanc-craie text-noir-encre p-6 md:p-10 border-b-2 md:border-b-0 md:border-r-2", line)}>
             <span className="text-xs font-bold uppercase tracking-label text-chene">
               10h — 15h
             </span>
-            <p className="font-display uppercase text-4xl md:text-6xl leading-[0.9] mt-4">
+            <p className="font-display uppercase text-[13vw] md:text-[6.5vw] leading-[0.8] mt-4">
               Brunch
               <br />
-              Le Matin
+              Matin
             </p>
             <p className="mt-6 text-corps max-w-sm">
               Lumière naturelle, bois brut, vaisselle blanche. Un lieu lent. Le logo se pose en
               noir sur fond craie, le kraft en respiration.
             </p>
           </div>
-          <div className="bg-noir-encre text-blanc-craie p-10 md:p-16">
+          <div className="bg-noir-encre text-blanc-craie p-6 md:p-10">
             <span className="text-xs font-bold uppercase tracking-label text-chene">
               18h — 01h
             </span>
-            <p className="font-display uppercase text-4xl md:text-6xl leading-[0.9] mt-4">
-              Fast Food
+            <p className="font-display uppercase text-[13vw] md:text-[6.5vw] leading-[0.8] mt-4">
+              Fast
               <br />
-              Le Soir
+              Food
             </p>
             <p className="mt-6 text-corps max-w-sm">
               Nuit, néon chaud, comptoir sombre. Un lieu rapide. Le logo passe en blanc sur
@@ -163,17 +162,25 @@ export default function Home() {
       </section>
 
       {/* NOS SIGNATURES */}
-      <section className="px-6 md:px-10 py-16 border-b-2 border-current/20">
-        <h2 className="font-display uppercase text-titre md:text-display mb-10">
-          Nos Signatures
-        </h2>
+      <section className={cn("border-b-2", line)}>
+        <div className={cn("px-4 md:px-8 py-10 md:py-14 border-b-2", line)}>
+          <h2 className="font-display uppercase text-[11vw] md:text-[6.2vw] leading-[0.8]">
+            Nos Signatures
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-current/20 border-2 border-current/20">
+        <div
+          className={cn(
+            "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px border-t-2",
+            line,
+            isAm ? "bg-noir-encre" : "bg-blanc-craie"
+          )}
+        >
           {signatures.map(({ icon: Icon, title, description, tag }) => (
             <div
               key={title}
               className={cn(
-                "flex flex-col p-8 min-h-[320px] transition-colors duration-500",
+                "flex flex-col p-6 min-h-[320px] transition-colors duration-500",
                 isAm ? "bg-blanc-craie" : "bg-noir-encre"
               )}
             >
@@ -186,7 +193,7 @@ export default function Home() {
               <div className="flex-1 bg-current/10 mb-6 flex items-center justify-center text-[10px] uppercase tracking-label opacity-40">
                 Photo
               </div>
-              <h3 className="font-display uppercase text-lg leading-tight mb-2">{title}</h3>
+              <h3 className="font-display uppercase text-2xl leading-[0.9] mb-2">{title}</h3>
               <p className="text-sm opacity-75">{description}</p>
             </div>
           ))}
@@ -194,10 +201,10 @@ export default function Home() {
       </section>
 
       {/* CTA — NOUS TROUVER */}
-      <section className="bg-chene text-noir-encre px-6 md:px-10 py-16 md:py-20">
+      <section className="bg-chene text-noir-encre px-4 md:px-8 py-10 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
           <div className="md:col-span-7">
-            <p className="font-display uppercase leading-[0.85] text-[13vw] md:text-[5.2vw]">
+            <p className="font-display uppercase leading-[0.8] text-[14vw] md:text-[6.5vw]">
               Brunch
               <br />
               Fast Food

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Archivo, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import ModePicker from "@/components/ModePicker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -36,7 +35,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
         <ThemeProvider>
-          <ModePicker />
           <Navbar />
           <div className="checkerboard h-4 w-full" />
           <main className="flex-1">{children}</main>
