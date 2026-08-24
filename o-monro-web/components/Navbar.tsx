@@ -22,13 +22,15 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "transition-colors duration-500",
-        isAm ? "bg-blanc-craie text-noir-encre" : "bg-noir-encre text-blanc-craie"
+        "border-b-4 transition-colors duration-500",
+        isAm
+          ? "bg-blanc-craie text-noir-encre border-noir-encre"
+          : "bg-noir-encre text-blanc-craie border-blanc-craie"
       )}
     >
       <div className="flex items-center justify-between gap-6 px-6 md:px-10 py-4 md:py-6">
         <Link href="/" aria-label="O'Monro — Accueil" className="shrink-0">
-          <Logo className="h-16 w-72 md:h-24 md:w-[26rem] lg:h-28 lg:w-[30rem]" invert={!isAm} priority />
+          <Logo className="h-14 w-24 md:h-20 md:w-36 lg:h-24 lg:w-40" invert={!isAm} priority />
         </Link>
 
         <div className="hidden md:flex flex-col items-end gap-4 flex-1">
@@ -55,7 +57,10 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="md:hidden"
+          className={cn(
+            "md:hidden flex items-center justify-center border-2 p-2",
+            isAm ? "border-noir-encre" : "border-blanc-craie"
+          )}
           aria-label="Ouvrir le menu"
           onClick={() => setOpen((v) => !v)}
         >

@@ -85,7 +85,7 @@ export default function ContactPage() {
                       name={field.name}
                       required
                       rows={3}
-                      className="bg-transparent border-0 border-b-2 border-current/40 focus:border-chene outline-none py-3 text-xl md:text-2xl font-sans resize-none placeholder:opacity-30"
+                      className="bg-transparent border-0 border-b-4 border-current/40 focus:border-chene outline-none py-3 text-xl md:text-2xl font-sans resize-none placeholder:opacity-30"
                       placeholder="Votre message..."
                     />
                   </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                       name={field.name}
                       type={field.type}
                       required
-                      className="bg-transparent border-0 border-b-2 border-current/40 focus:border-chene outline-none py-3 text-xl md:text-2xl font-sans placeholder:opacity-30"
+                      className="bg-transparent border-0 border-b-4 border-current/40 focus:border-chene outline-none py-3 text-xl md:text-2xl font-sans placeholder:opacity-30"
                       placeholder={field.label}
                     />
                   </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-8 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 border-current hover:bg-chene hover:border-chene hover:text-noir-encre transition-colors"
+                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-8 py-4 font-bold text-xs uppercase tracking-label border-2 border-current hover:bg-chene hover:border-chene hover:text-noir-encre transition-colors"
               >
                 Envoyer
                 <ArrowRight strokeWidth={1.5} className="size-4" />

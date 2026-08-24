@@ -11,14 +11,14 @@ export default function Logo({
   priority?: boolean;
 }) {
   return (
-    <span className={cn("relative inline-block h-12 w-40", className)}>
+    <span className={cn("relative inline-block h-12 w-20", className)}>
       <Image
         src="/logo.png"
         alt="O'Monro — Brunch - Fast Food"
         fill
         priority={priority}
         sizes="(max-width: 768px) 160px, 320px"
-        className={cn("object-contain object-left transition-[filter] duration-500", invert && "invert")}
+        className={cn("object-cover object-center transition-[filter] duration-500", invert && "invert")}
       />
     </span>
   );

@@ -35,7 +35,7 @@ body {
     #0e0e0e 180deg 270deg,
     #dcc7ab 270deg
   );
-  background-size: 24px 24px;
+  background-size: 16px 16px;
 }
 
 .checkerboard-invert {
@@ -45,5 +45,5 @@ body {
     #f7f3ec 180deg 270deg,
     #b4885c 270deg
   );
-  background-size: 24px 24px;
+  background-size: 16px 16px;
 }

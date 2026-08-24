@@ -11,7 +11,7 @@ export default function ModePicker() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-10 bg-noir-encre px-6 py-16 text-blanc-craie">
-      <Logo className="h-16 w-64 md:h-20 md:w-80" invert />
+      <Logo className="h-20 w-36 md:h-24 md:w-44" invert />
 
       <p className="text-xs font-bold uppercase tracking-label text-chene text-center">
         Choisissez votre moment

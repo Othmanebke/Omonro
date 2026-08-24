@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider>
           <ModePicker />
           <Navbar />
-          <div className="checkerboard h-3 w-full" />
+          <div className="checkerboard h-4 w-full" />
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

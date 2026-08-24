@@ -83,7 +83,7 @@ export default function Home() {
           <Link
             href="/carte"
             className={cn(
-              "mt-8 inline-flex items-center gap-2 self-start px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
+              "mt-8 inline-flex items-center gap-2 self-start px-7 py-4 font-bold text-xs uppercase tracking-label border-2 transition-colors",
               isAm
                 ? "bg-noir-encre text-blanc-craie border-noir-encre hover:bg-transparent hover:text-noir-encre"
                 : "bg-blanc-craie text-noir-encre border-blanc-craie hover:bg-transparent hover:text-blanc-craie"
@@ -99,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="checkerboard h-3 w-full" />
+      <div className="checkerboard h-4 w-full" />
 
       {/* ACCROCHE */}
       <section className="px-6 md:px-10 py-16 md:py-20 border-b-2 border-current/20">
@@ -110,7 +110,7 @@ export default function Home() {
         <Link
           href="/qui-sommes-nous"
           className={cn(
-            "mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 transition-colors",
+            "mt-8 inline-flex items-center gap-2 px-7 py-4 font-bold text-xs uppercase tracking-label border-2 transition-colors",
             isAm ? "border-noir-encre" : "border-blanc-craie"
           )}
         >
@@ -212,7 +212,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 self-start px-7 py-4 rounded-full bg-noir-encre text-blanc-craie font-bold text-xs uppercase tracking-label border-2 border-noir-encre hover:bg-transparent hover:text-noir-encre transition-colors"
+              className="inline-flex items-center gap-2 self-start px-7 py-4 bg-noir-encre text-blanc-craie font-bold text-xs uppercase tracking-label border-2 border-noir-encre hover:bg-transparent hover:text-noir-encre transition-colors"
             >
               Nous trouver
               <ArrowRight strokeWidth={1.5} className="size-4" />
