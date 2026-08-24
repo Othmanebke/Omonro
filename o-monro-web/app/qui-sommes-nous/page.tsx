@@ -53,7 +53,7 @@ export default function QuiSommesNousPage() {
 
       <section className="border-b-2 border-current/20">
         <div className="px-6 md:px-10 py-16">
-          <h2 className="font-display uppercase text-3xl md:text-5xl mb-4">Nos Valeurs</h2>
+          <h2 className="font-display uppercase text-titre md:text-display mb-4">Nos Valeurs</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 border-t-2 border-current/20">
           {values.map(({ icon: Icon, title, description }, i) => (

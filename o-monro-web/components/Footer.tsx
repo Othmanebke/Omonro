@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { AtSign, MapPin, Phone } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
-import { cn } from "@/lib/utils";
+import Logo from "@/components/Logo";
 
 const columns = [
   {
@@ -25,29 +22,19 @@ const columns = [
 ];
 
 export default function Footer() {
-  const { mode } = useTheme();
-  const isAm = mode === "am";
-
   return (
-    <footer
-      className={cn(
-        "transition-colors duration-500",
-        isAm ? "bg-blanc-craie text-noir-encre" : "bg-noir-encre text-blanc-craie"
-      )}
-    >
+    <footer className="bg-kraft text-noir-encre">
       <div className="checkerboard h-4 w-full" />
 
-      <div className="px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10 border-b-2 border-current/20">
+      <div className="px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10 border-b-2 border-noir-encre/20">
         <div className="md:col-span-7">
-          <p className="font-display uppercase leading-[0.85] text-[16vw] md:text-[9vw]">
-            O&apos;Monro
-          </p>
+          <Logo className="text-[16vw] md:text-[9vw] leading-[0.85]" />
         </div>
 
         <div className="md:col-span-5 grid grid-cols-2 gap-8">
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-bold uppercase tracking-label mb-4 text-chene">
+              <h3 className="text-xs font-bold uppercase tracking-label mb-4 text-noir-encre">
                 {col.title}
               </h3>
               <ul className="flex flex-col gap-2">
@@ -55,7 +42,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm font-sans hover:opacity-60 transition-opacity"
+                      className="text-sm font-sans text-noyer hover:text-noir-encre transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -65,7 +52,7 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="col-span-2 flex flex-col gap-3 pt-2">
+          <div className="col-span-2 flex flex-col gap-3 pt-2 text-noyer">
             <span className="flex items-center gap-2 text-sm">
               <MapPin strokeWidth={1.5} className="size-4" />
               12 Rue de la Marmite, 75011 Paris
@@ -76,7 +63,7 @@ export default function Footer() {
             </span>
             <a
               href="#"
-              className="flex items-center gap-2 text-sm hover:opacity-60 transition-opacity"
+              className="flex items-center gap-2 text-sm hover:text-noir-encre transition-colors"
             >
               <AtSign strokeWidth={1.5} className="size-4" />
               @omonro.paris
@@ -85,10 +72,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-label">
+      <div className="px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-label text-noyer">
         <span>© {new Date().getFullYear()} O&apos;Monro — Tous droits réservés</span>
         <span>Brunch le matin, Fast Food le soir</span>
       </div>
+
+      <div className="checkerboard h-4 w-full" />
     </footer>
   );
 }

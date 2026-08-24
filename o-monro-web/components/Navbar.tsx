@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
+import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -21,15 +22,13 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b-2 transition-colors duration-500",
-        isAm
-          ? "bg-blanc-craie border-noir-encre text-noir-encre"
-          : "bg-noir-encre border-blanc-craie text-blanc-craie"
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-500",
+        isAm ? "bg-blanc-craie text-noir-encre" : "bg-noir-encre text-blanc-craie"
       )}
     >
       <div className="flex items-center justify-between px-6 md:px-10 h-20">
-        <Link href="/" className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-          O&apos;Monro
+        <Link href="/" aria-label="O'Monro — Accueil">
+          <Logo className="text-2xl md:text-3xl" withTagline />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

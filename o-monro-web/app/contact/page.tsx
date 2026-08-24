@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 import { ArrowRight, MapPin, Phone, Clock } from "lucide-react";
 
 const fields = [
@@ -12,7 +12,7 @@ const fields = [
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     setSent(true);
   }
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-8 py-4 font-bold text-xs uppercase tracking-label border-2 border-current hover:bg-chene hover:border-chene hover:text-noir-encre transition-colors"
+                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-8 py-4 rounded-full font-bold text-xs uppercase tracking-label border-2 border-current hover:bg-chene hover:border-chene hover:text-noir-encre transition-colors"
               >
                 Envoyer
                 <ArrowRight strokeWidth={1.5} className="size-4" />

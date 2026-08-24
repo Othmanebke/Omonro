@@ -51,7 +51,7 @@ export default function CartePage() {
 
       <div
         className={cn(
-          "mt-16 p-8 md:p-12 border-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-4",
+          "mt-16 p-8 md:p-12 rounded-3xl border-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-4",
           isAm ? "border-noir-encre" : "border-blanc-craie"
         )}
       >
