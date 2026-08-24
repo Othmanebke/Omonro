@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --bg: #f7f3ec;
+  --fg: #0e0e0e;
+}
+
+:root[data-mode="pm"] {
+  --bg: #0e0e0e;
+  --fg: #f7f3ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+/* Motif damier utilisé pour les séparateurs éditoriaux (footer, sections) */
+.checkerboard {
+  background-image: conic-gradient(
+    #0e0e0e 90deg,
+    #dcc7ab 90deg 180deg,
+    #0e0e0e 180deg 270deg,
+    #dcc7ab 270deg
+  );
+  background-size: 24px 24px;
+}
+
+.checkerboard-invert {
+  background-image: conic-gradient(
+    #f7f3ec 90deg,
+    #b4885c 90deg 180deg,
+    #f7f3ec 180deg 270deg,
+    #b4885c 270deg
+  );
+  background-size: 24px 24px;
+}
